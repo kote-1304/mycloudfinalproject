@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Home</title>   
+</head>
+<body>
+  <div class="container mt-5 border rounded"> 
+    <form id="fm" action="/" method="post">
+      <div>
+          <h5 class="h5">Register Here</h5>
+      </div>
+      {% if errors %}
+         <p style="color: red;"> {{ errors }} </p>
+      {% endif %}
+      <div class="col-12">
+        <label for="fn" class="form-label">First Name</label>
+        <input name="fn" type="text" class="form-control" id="fn" placeholder="Enter your first name" required>
+      </div>
+      <div class="col-12">
+        <label for="ln" class="form-label">Last Name</label>
+        <input name="ln" type="text" class="form-control" id="ln" placeholder="Enter your last name" required>
+      </div>
+      <div class="col-12">
+          <label for="email" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email id" required>
+        </div>
+      <div class="col-12">
+        <label for="pass1" class="form-label">Password</label>
+        <input name="pass1" type="password" class="form-control" id="pass1" placeholder="Enter your password" required>
+      </div>
+      <div class="col-12">
+        <label for="pass2" class="form-label">Confirm Password</label>
+        <input name="pass2" type="password" class="form-control" id="pass2" placeholder="Enter your password again" required>
+      </div>
+      <br>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </div>
+      <h6>Already Have an account ? <a href="/login">Login Here</a></h6>
+    </form>   
+  </div>
+    
+</body>
+</html>
